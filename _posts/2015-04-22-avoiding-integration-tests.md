@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Avoiding integration Tests
+title: Avoiding Integration Tests
 tags: ruby rails rspec capybara unit-tests
 ---
 
