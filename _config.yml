@@ -57,5 +57,8 @@ Blogroll:
 
 ### Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 highlighter: pygments
 paginate: 5
