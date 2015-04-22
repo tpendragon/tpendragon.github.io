@@ -64,5 +64,6 @@ redcarpet:
   extensions: 
     - disable_indented_code_blocks
     - lax_spacing
+    - strikethrough
 highlighter: pygments
 paginate: 5
