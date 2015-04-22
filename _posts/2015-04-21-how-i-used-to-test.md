@@ -22,7 +22,7 @@ could feel it. Time to figure out what went wrong.
 
 ## Dipping The Toes
 
-Shortly after I got my first full time job, having answered a similar question by saying "well, I'm familiar with *Test Driven Development*, but I've never done it."
+I got my first full time job shortly afterwards, having answered a similar question by saying "well, I'm familiar with *Test Driven Development*, but I've never done it."
 
 Fortunately they were nice.
 
