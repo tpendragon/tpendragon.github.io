@@ -2,7 +2,6 @@
 title: Trey's Dev Stuff
 tagline: Ruby, object oriented development, linked data, and other fun tech.
 author: Trey Terrell
-email: treydt@gmail.com
 description: "Ruby, object oriented development, linked data, and other fun tech." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "ruby, rails, RDF, linked data, OOP"
 baseurl: "" # the subpath of your site, e.g. /blog
