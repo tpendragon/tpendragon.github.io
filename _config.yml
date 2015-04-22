@@ -12,7 +12,7 @@ locale: en_US
 twitter_username: terrell_dt
 github_username:  terrellt
 disqus_shortname: treysdevstuff
-favicon:      
+favicon:  images/favicon.ico
 aboutme:  "I'm a ruby developer at Oregon State University, a software design nerd, and a fan of video games."
 aboutme_photo: 
 
