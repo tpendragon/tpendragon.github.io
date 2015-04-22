@@ -185,6 +185,11 @@ dependencies`. In these tests we've hidden away that dependencies exist - if
 tests are written such that they tell us about them then the complexity becomes
 apparent **while writing the test.**
 
+#### Recommended Watching
+
+[Integrated Tests Are A Scam](https://vimeo.com/80533536) - Great talk by J.B.
+Rainsberger about why integrated tests eventually calcify and his proposal on
+what to do about it.
 
 ## Up Next
 
