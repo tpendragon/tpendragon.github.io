@@ -12,9 +12,9 @@ locale: en_US
 ### Personal info and site tools info:
 twitter_username: terrell_dt
 github_username:  terrellt
-disqus_shortname: freshman21
-favicon:     "/images/favicon.ico"
-aboutme:  
+disqus_shortname: treysdevstuff
+favicon:      
+aboutme:  "I'm a ruby developer at Oregon State University, a software design nerd, and a fan of video games."
 aboutme_photo: 
 
 
