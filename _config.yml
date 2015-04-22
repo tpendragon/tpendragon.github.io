@@ -56,10 +56,9 @@ locales:
 Blogroll:
 
 ### Build settings
-markdown: kramdown
+markdown: redcarpet
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
   hard_wrap: false
 highlighter: pygments
 paginate: 5
