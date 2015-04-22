@@ -74,7 +74,7 @@ A few little problems popped up.
    Testing my application was taking something like 30-60 minutes to run through
 the full set of tests.
 
-    Oh well, I could work around that - throw in a Rails preloader like
+   Oh well, I could work around that - throw in a Rails preloader like
 [spring](https://github.com/rails/spring), run only the specs I care about while
 developing, and then things only hurt when I had to make sure the all the tests
 were done. **Solved**
