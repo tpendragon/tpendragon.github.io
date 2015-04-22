@@ -60,5 +60,9 @@ markdown: redcarpet
 kramdown:
   input: GFM
   hard_wrap: false
+redcarpet:
+  extensions: 
+    - disable_indented_code_blocks
+    - lax_spacing
 highlighter: pygments
 paginate: 5

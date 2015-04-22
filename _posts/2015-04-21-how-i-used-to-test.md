@@ -71,24 +71,24 @@ A few little problems popped up.
 
 1. Testing Was Slow
    
-   Testing my application was taking something like 30-60 minutes to run through
+     Testing my application was taking something like 30-60 minutes to run through
 the full set of tests.
 
-   Oh well, I could work around that - throw in a Rails preloader like
+     Oh well, I could work around that - throw in a Rails preloader like
 [spring](https://github.com/rails/spring), run only the specs I care about while
 developing, and then things only hurt when I had to make sure the all the tests
 were done. **Solved**
 
 2. Test Driven Development
    
-   I kept reading that I should be writing tests first, and it was hard. Often
+     I kept reading that I should be writing tests first, and it was hard. Often
 times the last thing I knew was what the UI would look like - how could I write
 a test that included information about it? Oh well, do my best. **Not So
 Solved**
 
 3. Code Design
 
-   This felt like the biggest problem to me - I kept hearing that tests should
+     This felt like the biggest problem to me - I kept hearing that tests should
 make me recognize when my code needed help, but none of my tests were saying
 anything about the code - just the application that it created. I could refactor
 without changing tests, yes, but I could also **NOT** and it would all feel the
@@ -96,7 +96,7 @@ same. **Not Solved**
 
 4. Unreliable
 
-   Sometimes I'd run my tests and they'd fail - but seemingly randomly. I
+     Sometimes I'd run my tests and they'd fail - but seemingly randomly. I
 couldn't trust the application unless they passed, but there was no way to find
 out why they were failing (often times it'd be a race condition within capybara
 or my application logic that couldn't be reproduced by a user), so all I could
