@@ -103,6 +103,11 @@ or my application logic that couldn't be reproduced by a user), so all I could
 do was restart the tests and wait for them to pass - another 30-60 minutes down
 the drain.
 
+     Maybe this was a problem with my tests, or my system legitimately failed
+sometimes. The issue was there was no way to tell: every test ran through so
+much that I couldn't find what was going on, and had to attribute it to bugs in
+the workflow of spinning up a browser.
+
 ## Now What?
 
 I knew I had some problems, and I knew if I wanted stable, reliable, functional
