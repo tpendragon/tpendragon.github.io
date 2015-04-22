@@ -14,7 +14,9 @@ one other option: *Unit Tests*.
 
 My reasoning went like this: People had been automatically testing applications,
 even web applications, long before they could automatically launch a browser and
-click around with a clean DSL. How did they do it? The answer is messages.
+click around with a clean DSL. How did they do it?
+
+The answer is messages.
 
 ## Trust Your Interface
 
