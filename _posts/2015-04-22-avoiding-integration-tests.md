@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Avoiding integration Tests
-tags: ruby rails rspec capybara
+tags: ruby rails rspec capybara unit-tests
 ---
 
 *To see the previous post in this series please check out [How I Used to

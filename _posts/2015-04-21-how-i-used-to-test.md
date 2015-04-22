@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I Used to Test
-tags: ruby rails rspec capybara
+tags: ruby rails rspec capybara integration-tests
 ---
 
 ## Starting Out
@@ -117,3 +117,5 @@ Integration tests had failed me, there was only one other option - *Unit Tests*
 
 My next post will be all about the resources I used to get where I am now, and
 what I think the solution to the problems above are.
+
+*Next Post in Series: [Avoiding Integration Tests]({% post_url 2015-04-22-avoiding-integration-tests %})*
