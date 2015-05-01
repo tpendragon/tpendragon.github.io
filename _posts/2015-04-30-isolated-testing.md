@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Isolated Testing
-tags: ruby rails rspec capybara unit-tests
+tags: ruby rails rspec capybara unit-tests mocks
 ---
 
 *To see the previous post in this series please check out [Avoiding Integration Tests]({% post_url 2015-04-22-avoiding-integration-tests %})*
@@ -38,164 +38,19 @@ me if my architecture could be better.
 detail here, but I suggest reading some
 [documentation](https://www.relishapp.com/rspec/rspec-mocks/docs).
 
-I'm going to go through an example of how one might test a new
-Validator which makes sure that the attribute "name" is "Bob."
-
-### Step 1:
-
-Begin to write the unit test for the highest level object.
-
-```ruby
-require 'rails_helper'
-
-RSpec.describe MyObject do
-  subject { described_class.new }
-
-  describe "#valid?" do
-  end
-end
-```
-
-### Step 2:
-
-Consider your architecture, and possible distribution of responsibilities.
-There's no reason MyObject needs to know how to validate. Rather, why not
-delegate that so that what the object is and how it validates can be separated?
-We don't have that class yet, so let's fill it in with a fake.
-
-```ruby
-require 'rails_helper'
-
-RSpec.describe MyObject do
-
-  describe "#valid?" do
-    it "should be valid if the given validator returns true" do
-      # This creates a totally fake object.
-      # If you send messages to it that aren't stubbed it will error.
-      validator = double("validator")
-      obj = MyObject.new(validator)
-      # This lets validator receive .validate(obj).
-      # If anything else is passed, it will error.
-      allow(validator).to receive(:validate).with(obj).and_return(true)
-
-      expect(obj).to be_valid
-    end
-    it "should be invalid if the given validator returns false" do
-      validator = double("validator")
-      obj = MyObject.new(validator)
-      allow(validator).to receive(:validate).with(obj).and_return(false)
-
-      expect(obj).to be_valid
-    end
-  end
-end
-```
-
-### Step 3
-
-Make tests pass for the initial object.
-
-```ruby
-class MyObject
-  attr_reader :validator
-  def initialize(validator)
-    @validator = validator
-  end
-
-  def valid?
-    validator.validate(self)
-  end
-end
-```
-
-### Step 4
-
-Fill in the collaborator test with a real object.
-
-```ruby
-require 'rails_helper'
-
-RSpec.describe MyObject do
-
-  describe "#valid?" do
-    it "should be valid if the given validator returns true" do
-      # This ensures that BobValidator exists, and you can't allow
-      # any methods to be called on it that don't exist for the real class.
-      validator = instance_double(BobValidator)
-      obj = MyObject.new(validator)
-      allow(validator).to receive(:validate).with(obj).and_return(true)
-
-      expect(obj).to be_valid
-    end
-    it "should be invalid if the given validator returns false" do
-      validator = instance_double(BobValidator)
-      obj = MyObject.new(validator)
-      allow(validator).to receive(:validate).with(obj).and_return(false)
-
-      expect(obj).to be_valid
-    end
-  end
-end
-```
-
-### Step 5
-
-Write a test for the collaborator
-
-```ruby
-require 'rails_helper'
-
-RSpec.describe BobValidator do
-  describe "#validate" do
-    context "when given an object with name Bob" do
-      it "should return true" do
-        validating = instance_double(MyObject)
-        allow(validating).to receive(:name).and_return("Bob")
-        validator = described_class.new
-
-        expect(validator.validate(validating)).to eq true
-      end
-    end
-    context "when given an object with a different name" do
-      it "should return false" do
-        validating = instance_double(MyObject)
-        allow(validating).to receive(:name).and_return("Joe")
-        validator = described_class.new
-
-        expect(validator.validate(validating)).to eq false
-      end
-    end
-  end
-end
-```
-
-### Step 6
-
-Make the test for the collaborator pass.
-
-```ruby
-class BobValidator
-  def validate(record)
-    record.name == "Bob"
-  end
-end
-```
-
-**Everything Passes!**
-
-## The Alternative
-
-If we weren't to do this, the test for MyObject might look something like this:
+Let's go through a quick example of the two methods of testing. This is a test
+to make sure that an object is valid if its name is "Bob" and it has "banana"
+set to true.
 
 ```ruby
 require 'rails_helper'
 
 RSpec.describe MyObject do
   describe "#valid?" do
-    context "when name is Joe" do
+    context "when name is Bob" do
       it "should be valid" do
         obj = MyObject.new
-        obj.name = "Test"
+        obj.name = "Bob"
 
         expect(obj).to be_valid
       end
@@ -204,10 +59,15 @@ RSpec.describe MyObject do
 end
 ```
 
-This looks much easier to manage. However, imagine as the class gets bigger and
-there are more validations. Do you test them with MyObject? Do you extract
+No dependencies have been mocked out and there's no clear interface about what's
+going on in the background. However, it was -very- easy to write.
+
+Imagine the class getting bigger and
+there being more validations. Do you test them with MyObject? Do you extract
 validators? What should the interface be? What was the interface you committed
-to in the first place? The power of showing the dependencies can be seen when
+to in the first place?
+
+The power of showing the dependencies can be seen when
 the pattern you've chosen is less than ideal:
 
 ```ruby
@@ -278,8 +138,7 @@ RSpec.describe MyObject do
 end
 ```
 
-This right here is **ridiculous**. Six lines of setup? For two validations? That
-hurt to write.
+This right here is **ridiculous**. Six lines of setup? For one test with two validations? That hurt to write.
 
 Something must be wrong.
 
@@ -309,7 +168,26 @@ That's better..now we don't have to stub that the items get created. I only want
 to inject one thing though, this could easily get out of control. What if there
 was a validator which took validators as an argument and returned true if both
 of ITS validators were true? Then you just pass that one validator in, and only
-have one dependency.
+have one dependency. Then you just test each collaborator, and the behavior of
+the dependency which takes dependencies, and you're good!
 
 And now you have the composite pattern, and a clean set of dependencies, because
 you could easily see the interfaces and dependency graph.
+
+## Why I Do This
+
+I've only been a professional programmer for a few years. Before that I had very
+little formal training, little understanding of patterns and practices, and had
+a flawed idea of what "good" architecture was. I'd always learned via one simple
+method: **I beat my head against something until it finally works.**
+
+That's great for hacking, but not for architecture. The wall to hit against was
+too far away, required too much experience to find, and was often hazy -
+determining why something was a good practice took a tremendous time investment.
+
+Bringing the interface and dependencies to the front in my tests DEFINES the
+wall and brings it closer. I get nearly immediate feedback on whether or not
+I've chosen correctly. In this way I can beat my way towards better software.
+
+`Isolated testing enables me to develop better applications than my experience says I
+should be able to.`

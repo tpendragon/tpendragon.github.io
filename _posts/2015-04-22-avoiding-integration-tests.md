@@ -195,5 +195,4 @@ what to do about it.
 
 ## Up Next
 
-In the next post I'll talk about writing isolated unit tests as a strategy to
-make tests informative, and why that information is important.
+*Next Post in Series: [Isolated Testing]({% post_url 2015-04-30-isolated-testing %})*
