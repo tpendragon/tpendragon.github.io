@@ -6,7 +6,7 @@ tags: ruby rails active-fedora
 
 In a recent sprint on [ActiveFedora
 Aggregations](https://github.com/projecthydra-labs/activefedora-aggregation/) I
-was working on Relationships in ActiveFedora and felt like I should catalogue my
+was working on relationships in ActiveFedora and felt like I should catalogue my
 understanding of how they work.
 
 ## Entry Point
