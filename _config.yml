@@ -1,16 +1,16 @@
 ### Site info:
 title: Trey's Dev Stuff
 tagline: Ruby, object oriented development, linked data, and other fun tech.
-author: Trey Terrell
+author: Trey Pendragon
 description: "Ruby, object oriented development, linked data, and other fun tech." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "ruby, rails, RDF, linked data, OOP"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://terrellt.github.io" # the base hostname & protocol for your site
+url: "http://tpendragon.github.io" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
-twitter_username: terrell_dt
-github_username:  terrellt
+twitter_username: pendragon_dt
+github_username:  tpendragon
 disqus_shortname: treysdevstuff
 favicon:  images/favicon.ico
 aboutme:  "I'm a ruby developer at Oregon State University, a software design nerd, and a fan of video games."
@@ -65,5 +65,6 @@ redcarpet:
     - disable_indented_code_blocks
     - lax_spacing
     - strikethrough
-highlighter: pygments
+highlighter: rouge
 paginate: 5
+gems: [jekyll-paginate]
