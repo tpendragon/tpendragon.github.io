@@ -1,0 +1,226 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "type": "Manifest",
+  "id": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/manifest",
+  "label": {
+    "eng": [
+      "IIIF 3 Albedo"
+    ]
+  },
+  "behavior": [
+    "individuals"
+  ],
+  "metadata": [
+    {
+      "label": {
+        "eng": [
+          "Title"
+        ]
+      },
+      "value": {
+        "eng": [
+          "IIIF 3 Albedo"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Downloadable"
+        ]
+      },
+      "value": {
+        "eng": [
+          "public"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Held By"
+        ]
+      },
+      "value": {
+        "eng": [
+          "Princeton"
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Embargo Date"
+        ]
+      },
+      "value": {
+        "eng": [
+          ""
+        ]
+      }
+    },
+    {
+      "label": {
+        "eng": [
+          "Ark"
+        ]
+      },
+      "value": {
+        "eng": [
+          "http://arks.princeton.edu/"
+        ]
+      }
+    }
+  ],
+  "rendering": [
+    {
+      "type": "Text",
+      "label": {
+        "en": [
+          "Download as PDF"
+        ]
+      },
+      "format": "application/pdf",
+      "id": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/pdf"
+    }
+  ],
+  "items": [
+    {
+      "type": "Canvas",
+      "id": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/manifest/canvas/48e78453-60fe-4e75-9b87-9ae3145c1b9e",
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file/full/1000,/0/default.jpg",
+                    "type": "Image",
+                    "height": 8192,
+                    "width": 5464,
+                    "format": "image/jpeg",
+                    "service": [
+                      {
+                        "@id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file",
+                        "profile": "http://iiif.io/api/image/2/level2.json",
+                        "@type": "ImageService2"
+                      },
+                      {
+                        "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file",
+                        "type": "LightingMapExtension",
+                        "profile": "http://iiif.io/api/extension/lightingmap",
+                        "mapType": "albedo"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/e0%2F31%2F54%2Fe03154dfb9994bc7bb37805356c542c1%2Fintermediate_file/full/1000,/0/default.jpg",
+                    "type": "Image",
+                    "height": 8192,
+                    "width": 5464,
+                    "format": "image/jpeg",
+                    "service": [
+                      {
+                        "@id": "https://iiif-cloud-staging.princeton.edu/iiif/2/e0%2F31%2F54%2Fe03154dfb9994bc7bb37805356c542c1%2Fintermediate_file",
+                        "profile": "http://iiif.io/api/image/2/level2.json",
+                        "@type": "ImageService2"
+                      },
+                      {
+                        "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/e0%2F31%2F54%2Fe03154dfb9994bc7bb37805356c542c1%2Fintermediate_file",
+                        "type": "LightingMapExtension",
+                        "profile": "http://iiif.io/api/extension/lightingmap",
+                        "mapType": "normal"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "id": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/manifest/canvas/48e78453-60fe-4e75-9b87-9ae3145c1b9e/annotation_page/16336e4b-46bf-4cb6-98f2-9c3ac95d32fe/annotation/d0c63177-0557-4adb-b3b9-94778ab2f811",
+              "target": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/manifest/canvas/48e78453-60fe-4e75-9b87-9ae3145c1b9e"
+            }
+          ],
+          "id": "https://figgy-staging.princeton.edu/concern/scanned_maps/ad74e6f8-940c-47e8-87c2-f2a62820d874/manifest/canvas/48e78453-60fe-4e75-9b87-9ae3145c1b9e/annotation_page/16336e4b-46bf-4cb6-98f2-9c3ac95d32fe"
+        }
+      ],
+      "label": {
+        "eng": [
+          "albedo_m1.tif"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file/full/!200,200/0/default.jpg",
+          "type": "Image",
+          "height": 200,
+          "width": 133,
+          "format": "image/jpeg",
+          "service": [
+            {
+              "@id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json",
+              "@type": "ImageService2"
+            }
+          ]
+        }
+      ],
+      "rendering": [
+        {
+          "id": "https://figgy-staging.princeton.edu/downloads/48e78453-60fe-4e75-9b87-9ae3145c1b9e/file/a59f85d6-19bf-4bdc-926a-99aee688dad8",
+          "format": "image/tiff",
+          "type": "Dataset",
+          "label": {
+            "en": [
+              "Download the original file"
+            ]
+          }
+        }
+      ],
+      "width": 5464,
+      "height": 8192
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://iiif-cloud-staging.princeton.edu/iiif/2/18%2Fbb%2F23%2F18bb234bb33e44a9bbbc91bef92f598d%2Fintermediate_file/full/!200,150/0/default.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "height": 150
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://figgy-staging.princeton.edu/catalog/ad74e6f8-940c-47e8-87c2-f2a62820d874.jsonld",
+      "type": "Dataset",
+      "format": "application/ld+json"
+    }
+  ],
+  "rights": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "provider": [
+    {
+      "id": "https://library.princeton.edu",
+      "type": "Agent",
+      "label": {
+        "en": [
+          "Princeton University Library"
+        ]
+      },
+      "logo": [
+        {
+          "id": "https://figgy-staging.princeton.edu/pul_logo_icon.png",
+          "type": "Image",
+          "format": "image/png",
+          "height": 100,
+          "width": 120
+        }
+      ]
+    }
+  ]
+}
